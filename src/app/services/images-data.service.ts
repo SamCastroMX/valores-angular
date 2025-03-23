@@ -12,7 +12,7 @@ export class ImagesDataService {
   constructor(private http: HttpClient) { }
 
   private idInit: number = 1;
-  private imgUrlInit: string = '/assets/images/big/SanValentin001.2d4a3b06a9f916c90e40.jpg';
+  private imgUrlInit: string = 'assets/images/big/SanValentin001.2d4a3b06a9f916c90e40.jpg';
   private uri: string = 'https://cassamstudio.net/api/hi.php';
   private uriSend: string = 'https://cassamstudio.net/mail5.php';
   private dataDefault: Image = {

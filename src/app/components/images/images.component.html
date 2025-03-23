@@ -1,0 +1,118 @@
+<app-canvas [value]="postalesForm.value.postal" [values]="images" [data]="postalesForm.value"></app-canvas>
+
+
+<div class="container montserrat-700 mt-3">
+    <form autocomplete="off" [formGroup]="postalesForm">
+        <div class="row">
+            <div class="col-lg-7 col-sm-12">
+                <p class="montserrat-500">{{'Elige el diseño que mas te agrade:' | uppercase}}</p>
+
+                <div class="row text-center align-items-center ">
+                    <div class="col-lg-4 col-sm-12 text-center" *ngFor="let img of images">
+                        
+                        <img [src]="img.Thumb" width="180">
+                        <p class="mt-3 mb-5">
+                            <input type="radio" class="form-check-input" formControlName="postal"
+                                [value]="img.id" />
+                            {{img.name}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-sm-12">
+                <p class="montserrat-500">{{'Mensaje:' | uppercase}}</p>
+
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-4">
+                            <label for="name" class="col-form-label arial-500">{{'Tú nombre:' |
+                                uppercase}}</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" id="name" formControlName="name" class="form-control" placeholder="Tú Nombre"
+                                aria-describedby="nameHelpInline">
+                                <span class="form-text text-danger" *ngIf="isValidField('name')"><small>{{getFieldError('name')}}</small></span>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center mt-4">
+                        <div class="col-4">
+                            <label for="para" class="col-form-label arial-500">{{'Para:' |
+                                uppercase}}</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" id="para" formControlName="para" class="form-control" placeholder="Para"
+                                aria-describedby="paraHelpInline">
+                        <span class="form-text text-danger" *ngIf="isValidField('para')"><small>{{getFieldError('para')}}</small></span>
+                        </div>
+
+                    </div>
+
+                    <div class="row align-items-center mt-4">
+                        <div class="col-4">
+                            <label for="mensaje" class="col-form-label arial-500">{{'Mensaje:' |
+                                uppercase}}</label>
+                        </div>
+                        <div class="col-8">
+                            <textarea id="mensaje" class="form-control" placeholder="Mensaje" maxlength="185" formControlName="mensaje"
+                                rows="4"></textarea>
+                            <p class="arial-500 gray"><b>Máximo de caracteres: 0 / 185</b></p>
+                            <span class="form-text text-danger" *ngIf="isValidField('mensaje')"><small>{{getFieldError('mensaje')}}</small></span>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center mt-4">
+                        <div class="col-4">
+                            <label for="tuCorreo" class="col-form-label arial-500">{{'Tú correo:' |
+                                uppercase}}</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" id="tuCorreo" class="form-control" placeholder="Tú Correo" formControlName="tuCorreo"
+                                aria-describedby="tuCorreoHelpInline">
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center mt-4">
+                        <div class="col-4">
+                            <label for="correoDestino" class="col-form-label arial-500">{{'Correo Destino:' |
+                                uppercase}}</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" id="correoDestino" class="form-control" placeholder="Correo Destino" formControlName="correoDestino"
+                                aria-describedby="correoDestinoHelpInline">
+                        <span class="form-text text-danger" *ngIf="isValidField('correoDestino')"><small>{{getFieldError('correoDestino')}}</small></span>
+
+                        </div>
+
+                    </div>
+
+                   
+
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <p class="montserrat-500">{{'Descarga:' | uppercase}}</p>
+                <div class="container">
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <a class="btn button col-sm-12" (click)="download()" name="downloader" id="downloader">Descargar</a>
+                        </div>
+
+                        <div class="col-6">
+                            <button class="btn button col-sm-12" [disabled]="isDisabled" (click)="sendImage()">Enviar</button>
+                        </div>
+
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <pre style="color:gray">
+                {{ postalesForm.value | json }}
+            </pre>
+            </div>
+        </div>
+    </form>
+</div>

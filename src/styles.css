@@ -68,7 +68,7 @@
   color: #bbb;
 }
 
- .nav-item .nav-link {
+.nav-item .nav-link {
   display: inline-block;
   color: #343a40;
   text-decoration: none;
@@ -271,27 +271,72 @@
 .navbar {
   transition: box-shadow 0.3s ease-in-out;
 }
+
 .navbar.shadow {
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06);
 }
 
 .button {
-  font-family: Montserrat, serif; 
-  background-color: black; 
-  color: #fff; 
+  font-family: Montserrat, serif;
+  background-color: black;
+  color: #fff;
   padding: 12px 34px;
   transition: transform 0.5s ease;
 }
+
 .button:hover {
-  background-color: black; 
-  color: #fff; 
+  background-color: black;
+  color: #fff;
 
 
-  transform: translateY(-2px); 
+  transform: translateY(-2px);
 }
 
 button:disabled {
   background-color: grey;
   cursor: not-allowed;
+}
+
+.buttonIni {
+  width: 300px;
+  height: 143px;
+  border: none;
+  background: url('/../assets/images/iniciar.png') no-repeat top left;
+  padding: 2px 8px;
+  transition: transform 0.5s ease;
+
+}
+
+.buttonIni:hover {
+  transform: translateY(-2px);
+}
+
+.montserrat-400 {
+  font-family: Montserrat;
+  font-weight: 400;
+}
+
+.intro-titulo {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  background-color: rgb(67, 72, 77);
+  text-align: center;
+}
+
+.intro-instrucciones {
+  background-color: rgb(221, 221, 221); 
+  color: black; 
+  font-size: 18px;
+}
+
+.intro-subtitle {
+  color: black; 
+  text-align: center; 
+  font-size: 23px;
+}
+
+.intro-red {
+  color: rgb(255, 58, 0); 
+  font-size: 23px;
 }

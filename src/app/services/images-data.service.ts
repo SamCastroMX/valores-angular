@@ -28,7 +28,7 @@ export class ImagesDataService {
     return this.http.get<Image[]>(this.uri)
       .pipe(
         tap(img => this.dataService = img),
-        // tap(img => console.log('service',this.dataService))
+         tap(img => console.log('service',this.dataService))
       )
   }
 

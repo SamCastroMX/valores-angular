@@ -1,2 +1,3 @@
 <app-navbar></app-navbar>
-<app-images></app-images>
+<app-intro *ngIf="intro" (introEnter)="changeIntro($event)"></app-intro>
+<app-images *ngIf="!intro"></app-images>
